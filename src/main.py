@@ -16,6 +16,13 @@ input_text = """
 
 if __name__ == '__main__':
     template_file = 'templates/Template.pptx'
+    prs = load_template(template_file)
+
+    print("Slide Layouts: ")
+    print_layouts(prs)
+
+    layout_mapping = get_layout_mapping(prs)
+
 
 
 

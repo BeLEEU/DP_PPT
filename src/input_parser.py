@@ -1,24 +1,10 @@
 
 from typing import Optional, List
-from dataclasses import dataclass, field
+from data_structures import PowerPoint, Slide, SlideContent
 import re
 
-@dataclass
-class SlideContent:
-    title: str
-    bullet_points: List[str] = field(default_factory=list)
-    image_path: Optional[str] = None
 
-@dataclass
-class Slide:
-    layout: int
-    content: SlideContent
-
-@dataclass
-class PowerPoint:
-    title: str
-    slides: List[Slide] = field(default_factory=list)
-
+# 解析输入文本，生成 PowerPoint 数据结构
 def parse_input_text(input_text: str, layout_mapping: dict) -> PowerPoint:
     lines = input_text.split('\n')
     presentation_title = ""
